@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var text = "Test"
+    
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            Text("SwiftUI Text Editor")
+                .font(.largeTitle)
+            
+            TextView(text: $text, font: UIFont(name: "Georia", size: 30))
+                .border(Color.gray, width: 1)
+            
+            Divider()
+            Text(text)
+        }.padding()
     }
 }
 
